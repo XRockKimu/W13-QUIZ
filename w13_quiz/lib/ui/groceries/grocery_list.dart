@@ -64,13 +64,6 @@ class _GroceryListState extends State<GroceryList> with SingleTickerProviderStat
       appBar: AppBar(
         title: const Text('Your Groceries'),
         actions: [IconButton(onPressed: onCreate, icon: const Icon(Icons.add))],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(icon: Icon(Icons.local_grocery_store )),
-            Tab(icon: Icon(Icons.search)),
-          ],
-        ),
       ),
       body: TabBarView(
         controller: _tabController,
@@ -94,6 +87,13 @@ class _GroceryListState extends State<GroceryList> with SingleTickerProviderStat
               Expanded(child: filteredContent),
             ],
           ),
+        ],
+      ),
+      bottomNavigationBar: TabBar(
+        controller: _tabController,
+        tabs: const [
+          Tab(icon: Icon(Icons.local_grocery_store )),
+          Tab(icon: Icon(Icons.search)),
         ],
       ),
     );
